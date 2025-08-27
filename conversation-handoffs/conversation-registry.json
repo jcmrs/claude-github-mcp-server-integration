@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "abbreviation": "CGI",
+    "full_name": "Claude GitHub Integration",
+    "repository": "jcmrs/claude-github-mcp-server-integration"
+  },
+  "conversation_chains": {
+    "CGI-setup": {
+      "focus_area": "integration-setup",
+      "latest_version": "CGI-2025-08-27-1900-setup-v1",
+      "versions": [
+        "CGI-2025-08-27-1900-setup-v1"
+      ],
+      "status": "active",
+      "description": "GitHub MCP Server installation and basic integration testing"
+    }
+  },
+  "conversations": {
+    "CGI-2025-08-27-1900-setup-v1": {
+      "conversation_id": "CGI-2025-08-27-1900-setup-v1",
+      "chain": "CGI-setup",
+      "version": 1,
+      "start_time": "2025-08-27T19:00:00Z",
+      "end_time": null,
+      "focus_area": "integration-setup",
+      "status": "active",
+      "key_outputs": [
+        "Docker Desktop installation on Windows 11",
+        "GitHub Personal Access Token creation",
+        "Claude Desktop MCP configuration",
+        "Cross-conversation coordination system design",
+        "Operating manual creation",
+        "Protocol documentation"
+      ],
+      "major_decisions": [
+        "Docker-based MCP server approach",
+        "Comprehensive GitHub PAT permissions",
+        "GitHub repository as persistent project memory",
+        "JSON + Markdown coordination file structure"
+      ],
+      "artifacts_created": [
+        "OPERATING-MANUAL.md",
+        "FUTURE-CONCEPTS.md", 
+        "conversation-handoffs/ directory structure",
+        "project-state.json",
+        "conversation-index.md"
+      ],
+      "issues_created": ["#1", "#2", "#3"],
+      "issues_resolved": [],
+      "handoff_summary": null,
+      "relationships": {
+        "continues_from": null,
+        "branches_from": null,
+        "merges": [],
+        "referenced_by": []
+      },
+      "next_version_trigger": "conversation_limits_reached",
+      "continuation_notes": "When this conversation hits limits, continue with setup-v2 focusing on advanced testing and real-world application"
+    }
+  },
+  "reference_resolution": {
+    "syntax_examples": {
+      "latest": "[Conv: CGI-setup] → resolves to CGI-2025-08-27-1900-setup-v1",
+      "specific": "[Conv: CGI-setup-v1] → explicit version reference",
+      "explicit_latest": "[Conv: CGI-setup-latest] → explicit latest version",
+      "all_versions": "[Conv: CGI-setup-all] → summary across all versions"
+    },
+    "resolution_rules": {
+      "default_to_latest": true,
+      "validate_existence": true,
+      "track_broken_references": true
+    }
+  },
+  "version_relationships": {
+    "continuation": "v2 continues where v1 left off due to limits",
+    "revision": "v2 revises/replaces v1's approach",
+    "branch": "v2 explores alternative approach to v1", 
+    "merge": "v3 combines insights from v1 and v2"
+  },
+  "system_metadata": {
+    "registry_version": "1.0",
+    "last_updated": "2025-08-27T19:27:00Z",
+    "total_conversations": 1,
+    "total_chains": 1,
+    "active_conversations": 1
+  }
+}
