@@ -8,7 +8,7 @@
 - **`HELP [command]`** - Get detailed help for specific command (e.g., HELP STATUS) ✅ OPERATIONAL
 
 ### Primary Commands
-- **`SAVE`** - Triggers Claude to prepare current conversation transcript for immediate save to GitHub ✅ OPERATIONAL
+- **`SAVE`** - Triggers Claude to create complete conversation transcript AND update JSON coordination files ✅ ENHANCED
 - **`MILESTONE`** - Mark important conversation point (Claude will note in transcript and consider for save) ✅ OPERATIONAL
 
 ### Development Commands (Expanding Based on Need)
@@ -26,6 +26,29 @@
 - **`WORKFLOW-OPTIMIZE`** - Analyze and optimize conversation workflow ⚠️ PLANNED
 - **`CONTEXT-SEARCH`** - Search across all conversation transcripts ⚠️ PLANNED
 
+## Enhanced SAVE Command
+
+### SAVE Command Now Performs:
+1. **Complete Conversation Transcript Creation** - Full markdown transcript with all exchanges
+2. **JSON Coordination File Updates** - Updates CONVERSATION-INDEX.json and project-state.json  
+3. **Repository Health Verification** - Runs REPO-CHECK before saving
+4. **Contextual Preservation** - Captures decision rationale and conversational nuance
+
+### Why This Enhancement Matters:
+**Problem Solved:** JSON summaries lose contextual details and decision-making rationale that future conversations need for continuity.
+
+**Solution:** SAVE now creates both detailed transcripts AND coordinating JSON files, ensuring complete contextual preservation.
+
+### SAVE Command Process:
+```
+🚨 SAVE Command Initiated
+├── 1. Repository health check (REPO-CHECK)
+├── 2. Create complete markdown transcript
+├── 3. Update JSON coordination files
+├── 4. Verify all saves successful
+└── ✅ Complete contextual preservation achieved
+```
+
 ## LIST Command Output
 
 ### When you type `LIST`, Claude provides:
@@ -39,7 +62,7 @@
 • HELP [command] - Detailed help for specific command
 
 **Primary Workflow:**
-• SAVE - Save conversation transcript to repository
+• SAVE - Complete transcript + JSON updates to repository
 • MILESTONE - Mark important progress + auto repository maintenance
 
 **Development Commands:**
@@ -172,6 +195,7 @@ When Claude needs action, it will use:
 - **`HELP STATUS`** - Detailed STATUS command capabilities
 - **`HELP READ`** - READ command syntax and examples
 - **`HELP MILESTONE`** - MILESTONE command workflow and auto-triggers
+- **`HELP SAVE`** - Enhanced SAVE command with transcript creation details
 
 ### HELP Command Benefits
 - **Quick reference** without reading full documentation
@@ -183,15 +207,16 @@ When Claude needs action, it will use:
 
 ### READ Command Usage
 - **`READ Setup-Core-v1`** - Access complete transcript from Setup Core v1 conversation
-- **`READ Setup-Core-v2`** - Access current conversation full context
+- **`READ Setup-Core-v2`** - Access Setup Core v2 full transcript
+- **`READ Setup-Core-v3`** - Access Setup Core v3 complete context (when available)
 - **`READ project-state`** - Current project status summary from project-state.json
 - **`READ conversation-index`** - Master coordination file (CONVERSATION-INDEX.json)
 - **`READ issue-5`** - Specific GitHub issue details and comments
 - **`READ future-concepts`** - Development concepts and planning notes
 
 ### READ Command Benefits
-- **Systematic access** to historical conversation details
-- **Context retrieval** for cross-conversation references
+- **Complete contextual access** to all conversation details and decision rationale
+- **Context retrieval** for cross-conversation references with full conversational nuance
 - **Distinction** between summary data and complete transcripts
 - **Human-friendly naming** instead of complex file paths
 
@@ -205,7 +230,7 @@ When Claude needs action, it will use:
 
 ### Automatic Repository Maintenance
 - **MILESTONE command** - Auto-triggers REPO-CHECK before marking milestone
-- **SAVE command** - Verifies repository health before transcript save  
+- **SAVE command** - Verifies repository health AND creates complete transcripts AND updates JSON files
 - **STATUS command** - Now includes repository maintenance health check AND development command guidance AND specialized conversation recommendations
 - **Concept identification** - Auto-documents new problems/ideas in FUTURE-CONCEPTS.md
 
@@ -267,7 +292,7 @@ When Claude needs action, it will use:
 ## Current Session Commands Available
 ✅ `LIST` - Complete command reference with status indicators  
 ✅ `HELP [command]` - Detailed command help and usage examples  
-✅ `SAVE` - Transcript system fully operational  
+✅ `SAVE` - Enhanced: Complete transcript creation + JSON coordination file updates  
 ✅ `STATUS` - Conversation health + repository maintenance + development command guidance + specialized conversation recommendations  
 ✅ `MILESTONE` - Important point marking + automatic repo maintenance + Dev Commands conversation prompts  
 ✅ `UPDATE-INDEX` - CONVERSATION-INDEX.json updates (recommend via Dev Commands conversation)  
@@ -284,22 +309,22 @@ When Claude needs action, it will use:
 1. New to the system: `LIST` to see all available commands
 2. Need help with specific command: `HELP STATUS` for detailed guidance
 3. Check system health: `STATUS` for comprehensive assessment
-4. Access historical context: `READ Setup-Core-v1` for previous conversation
+4. Access historical context: `READ Setup-Core-v1` for complete previous conversation
 
 ### Basic Workflow
 1. Work on tasks normally
 2. Use `STATUS` to check health and get development command recommendations
 3. When Claude signals or STATUS recommends: Execute suggested commands
 4. At completion points: `MILESTONE` (triggers repo maintenance + Dev Commands recommendations)
-5. For important preservation: `SAVE`
+5. For complete preservation: `SAVE` (creates full transcript + updates coordination)
 
 ### Enhanced Development Workflow  
 1. Complete significant work: `STATUS` to check recommendations
 2. If multiple dev commands needed: Create/use "Dev Commands v1" conversation
 3. Execute recommended development commands in specialized conversation
 4. Mark achievements in main conversation: `MILESTONE` 
-5. Access historical context as needed: `READ [target]`
-6. When ready to handoff: `HANDOFF-PREP` → `SAVE`
+5. Access complete historical context as needed: `READ [target]`
+6. When ready to handoff: `HANDOFF-PREP` → `SAVE` (preserves complete context)
 
 ### Specialized Conversation Pattern
 1. Main conversation: Focus on development work
@@ -313,13 +338,13 @@ When Claude needs action, it will use:
 2. Execute recommended commands (main conversation or Dev Commands conversation)
 3. `REPO-CHECK` verifies all updates complete
 4. `MILESTONE` to mark maintenance completion
-5. `SAVE` to preserve maintenance work
+5. `SAVE` to preserve complete maintenance work with full context
 
 ### Cross-Conversation Reference Workflow
-1. `READ Setup-Core-v1` to access previous conversation details
-2. `READ project-state` to understand current status
+1. `READ Setup-Core-v1` to access complete previous conversation details
+2. `READ project-state` to understand current status summary
 3. `READ issue-5` to review specific issue context
-4. Continue work with complete historical context
+4. Continue work with complete historical context including decision rationale
 5. `UPDATE-INDEX` to reflect cross-conversation insights
 
 ## Usage Notes
@@ -327,24 +352,62 @@ When Claude needs action, it will use:
 - Can be used mid-conversation at any point
 - **LIST and HELP commands provide immediate guidance without documentation lookup**
 - **STATUS command now provides specialized conversation recommendations**
-- **READ command enables systematic access to historical context**
+- **READ command enables systematic access to complete historical context**
+- **SAVE command now preserves complete conversational context, not just summaries**
 - Repository maintenance now automatic with development command recommendations
 - Dev Commands specialized conversation available for token-efficient maintenance operations
 - Commands integrate with existing handoff protocols
 
 ## Implementation Status
-- **Current Phase:** Complete command system with LIST, HELP, and specialized conversation integration
-- **Next Phase:** Testing specialized conversation patterns and cross-conversation handoff validation
-- **Integration:** All commands work seamlessly with GitHub MCP and transcript system
-- **Repository Health:** Systematic maintenance with intelligent command recommendations and specialized conversation options
+- **Current Phase:** Enhanced SAVE command with complete transcript preservation
+- **Next Phase:** Testing enhanced system and cross-conversation handoff validation
+- **Integration:** All commands work seamlessly with GitHub MCP and enhanced transcript system
+- **Repository Health:** Systematic maintenance with complete contextual preservation
 
 ## System Benefits
 ✅ **Complete command discoverability** - LIST and HELP commands for immediate guidance  
-✅ **Complete project memory** - Full transcript access with READ command  
+✅ **Complete project memory** - Full transcript access with READ command including decision context  
 ✅ **Intelligent workflow guidance** - STATUS provides specific command and conversation recommendations  
 ✅ **Token efficiency options** - Specialized Dev Commands conversation for maintenance operations  
 ✅ **Human-friendly operations** - Simple commands for complex project management  
 ✅ **Systematic maintenance** - Repository stays current automatically  
-✅ **Cross-conversation continuity** - READ command enables historical context access  
+✅ **Cross-conversation continuity** - READ command enables complete historical context access  
 ✅ **Flexible workflow patterns** - Multiple approaches for different project needs  
-✅ **GitHub integration** - All operations sync with repository automatically
+✅ **GitHub integration** - All operations sync with repository automatically  
+✅ **Contextual preservation** - SAVE command maintains complete conversational context and decision rationale
+
+## Human Protocol Recommendations
+
+### Current Protocols Working Well:
+✅ **Command Discovery:** LIST command provides immediate orientation  
+✅ **Command Help:** HELP [command] gives detailed guidance  
+✅ **Status Monitoring:** STATUS provides health checks and recommendations  
+✅ **Milestone Marking:** MILESTONE captures important progress points  
+
+### Recommended Protocol Enhancements:
+
+#### For New Conversations:
+1. **Always start with `LIST`** to see available commands
+2. **Use `READ [previous-conversation]`** for context continuity
+3. **Check `STATUS`** for current system health and recommendations
+
+#### For Mid-Conversation:
+1. **Use `STATUS`** when unsure about next steps
+2. **Use `MILESTONE`** when significant progress achieved
+3. **Use `SAVE`** when approaching handoff or conversation limits
+
+#### For Conversation Endings:
+1. **Use `HANDOFF-PREP`** to prepare transition
+2. **Use `SAVE`** to preserve complete context
+3. **Update Project Description** as prompted
+
+#### For Command-Heavy Situations:
+1. **Create "Dev Commands v1"** conversation for maintenance commands
+2. **Use specialized conversation** for repository operations
+3. **Return to main conversation** for continued development work
+
+### Protocol Optimization Opportunities:
+- **Enhanced human signaling** for when to use specialized conversations
+- **Better guidance** on choosing between command options
+- **Clearer indicators** for conversation transition points
+- **Systematic approach** for cross-project protocol adaptation
