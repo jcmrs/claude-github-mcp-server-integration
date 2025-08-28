@@ -1,9 +1,9 @@
 {
   "conversation_traffic_control": {
     "current_active_work": {
-      "priority": "Infrastructure complete - ready for development phase or handoff validation",
+      "priority": "Complete command system ready for testing",
       "last_conversation": "Setup Core v2", 
-      "next_conversation_should": "Test cross-conversation handoff validation OR begin Issue #4/#3 development OR create Development Maintenance conversation",
+      "next_conversation_should": "Test cross-conversation handoff validation OR begin Issue #4/#3 development OR test Dev Commands v1 conversation",
       "conversation_type": "Setup",
       "conversation_scope": "Core", 
       "conversation_version": "v2",
@@ -15,22 +15,22 @@
         "REPO-MAINTENANCE-CHECKLIST.md",
         "Issues #1-#6"
       ],
-      "immediate_task": "Validate handoff system with transcript access OR proceed with development phase OR test specialized development conversation"
+      "immediate_task": "Test complete command system OR validate handoff system OR proceed with development phase"
     }
   },
   "human_action_required": {
-    "update_project_description": "This project establishes Claude.AI + GitHub coordination. FOR NEW CONVERSATIONS: Go to GitHub repository jcmrs/claude-github-mcp-server-integration and read CONVERSATION-INDEX.json to understand current work. Current phase: Infrastructure Complete - enhanced command system with READ capability and development guidance.",
+    "update_project_description": "This project establishes Claude.AI + GitHub coordination. FOR NEW CONVERSATIONS: Go to GitHub repository jcmrs/claude-github-mcp-server-integration and read CONVERSATION-INDEX.json to understand current work. Current phase: Complete Command System - Use LIST command to see all available commands, READ command for historical context, Dev Commands v1 for specialized maintenance.",
     "rename_conversation": "Setup Core v2",
-    "reason": "Infrastructure phase complete with enhanced command system including READ command and development command guidance",
+    "reason": "Complete command system implemented with LIST/HELP commands, Dev Commands conversation setup, and enhanced workflow guidance",
     "when_to_update": "Immediately when starting new conversation, and whenever current phase changes",
     "template": "FOR NEW CONVERSATIONS: Go to GitHub repository jcmrs/claude-github-mcp-server-integration and read CONVERSATION-INDEX.json. Current phase: [PHASE] - [DESCRIPTION]."
   },
   "conversation_chains": {
     "setup": {
       "latest": "Setup Core v2",
-      "status": "infrastructure_complete_enhanced",
-      "next_version": "Development Core v1 or Cross-conversation Validation or Development Maintenance v1",
-      "pickup_point": "Infrastructure complete with enhanced command system - test handoff OR begin development work OR test specialized maintenance conversation",
+      "status": "complete_command_system_implemented",
+      "next_version": "Development Core v1 or Cross-conversation Validation or Dev Commands v1",
+      "pickup_point": "Complete command system operational - test handoff OR begin development work OR test specialized Dev Commands conversation",
       "completed_work": [
         "GitHub MCP Server installation and configuration",
         "Cross-conversation coordination system design", 
@@ -41,17 +41,21 @@
         "Systematic repository maintenance system",
         "Enhanced STATUS command with development guidance",
         "READ command for historical context access",
-        "Human ideas backlog system for post-conversation insights"
+        "Human ideas backlog system for post-conversation insights",
+        "LIST and HELP commands for command discoverability",
+        "Dev Commands v1 specialized conversation setup with starter text"
       ],
       "critical_achievements": {
         "issue_5_resolved": "Semi-automated transcript system operational",
         "issue_6_implemented": "Repository maintenance system with automatic triggers",
-        "command_system_enhanced": "READ command and STATUS guidance operational",
+        "command_system_complete": "LIST, HELP, READ, enhanced STATUS all operational",
+        "specialized_conversations": "Dev Commands v1 setup complete with starter text",
         "repository_maintenance": "REPO-CHECK prevents documentation drift",
         "github_integration": "Seamless transcript saving and file management",
         "context_preservation": "Complete conversation history maintained",
         "systematic_workflows": "Automated maintenance integrated into command system",
-        "human_workflow_optimization": "Enhanced guidance and specialized conversation options"
+        "human_workflow_optimization": "Complete command discoverability and specialized conversation options",
+        "command_discoverability": "LIST and HELP commands solve new user onboarding"
       }
     },
     "development": {
@@ -59,37 +63,38 @@
       "status": "ready_to_start",
       "next_version": "Development Core v1",
       "pickup_point": "Issue #4 (human-friendly conversation management) or Issue #3 (cross-referencing refinement)",
-      "depends_on": "Infrastructure complete - can proceed immediately",
-      "specialized_options": "Development Maintenance v1 for token-efficient command execution"
+      "depends_on": "Complete command system ready - can proceed immediately"
     },
     "planning": {
       "latest": null, 
       "status": "ready_to_start",
       "next_version": "Planning Templates v1",
       "pickup_point": "Create universal project template system (Issue #2)",
-      "depends_on": "Infrastructure complete - can proceed immediately"
+      "depends_on": "Complete command system ready - can proceed immediately"
     },
     "maintenance": {
       "latest": null,
-      "status": "concept_ready",
-      "next_version": "Development Maintenance v1",
-      "pickup_point": "Execute development commands (UPDATE-INDEX, PROJECT-STATE, ISSUE-UPDATE) in specialized conversation",
-      "purpose": "Token-efficient execution of development commands separate from main work",
-      "benefits": "Improved token efficiency, specialized context, separation of concerns"
+      "status": "ready_for_testing",
+      "next_version": "Dev Commands v1",
+      "pickup_point": "Test specialized development command execution using provided starter text",
+      "purpose": "Token-efficient execution of development commands (UPDATE-INDEX, PROJECT-STATE, ISSUE-UPDATE, REPO-CHECK, HANDOFF-PREP)",
+      "benefits": "Improved token efficiency, specialized context, separation of concerns",
+      "setup_complete": "Starter text and workflow integration implemented"
     }
   },
   "new_conversation_protocol": {
     "step_1": "Read this CONVERSATION-INDEX.json file",
     "step_2": "Identify your conversation type from current_active_work",
-    "step_3": "Read the files listed in start_by_reading (INCLUDES full transcripts and enhanced command system)",
-    "step_4": "Familiarize with HUMAN-INSTRUCTIONS.md enhanced command system including READ command",
-    "step_5": "Check HUMAN-IDEAS-BACKLOG.md for recent insights and considerations",
-    "step_6": "Begin work on the immediate_task specified",
-    "step_7": "Use enhanced STATUS command for development command guidance",
-    "step_8": "Use REPO-CHECK for systematic repository maintenance",
-    "step_9": "Update this index when work is complete or when handing off",
-    "step_10": "ALWAYS prompt human to update Claude Project Description when phase changes",
-    "step_11": "ALWAYS prompt human to rename conversation with exact name from human_action_required"
+    "step_3": "Read the files listed in start_by_reading (INCLUDES full transcripts and complete command system)",
+    "step_4": "Use LIST command to see all available commands immediately",
+    "step_5": "Familiarize with HUMAN-INSTRUCTIONS.md complete command system including LIST, HELP, READ commands",
+    "step_6": "Check HUMAN-IDEAS-BACKLOG.md for recent insights and considerations",
+    "step_7": "Begin work on the immediate_task specified",
+    "step_8": "Use enhanced STATUS command for development command guidance and specialized conversation recommendations",
+    "step_9": "Use REPO-CHECK for systematic repository maintenance",
+    "step_10": "Update this index when work is complete or when handing off",
+    "step_11": "ALWAYS prompt human to update Claude Project Description when phase changes",
+    "step_12": "ALWAYS prompt human to rename conversation with exact name from human_action_required"
   },
   "conversation_update_rules": {
     "when_starting_work": "Update current_active_work with your conversation details",
@@ -100,50 +105,57 @@
     "transcript_access": "Always read previous conversation transcripts from conversation-transcripts/ directory",
     "repository_maintenance": "Use REPO-CHECK command systematically to prevent documentation drift",
     "command_guidance": "Use enhanced STATUS command for specific development command recommendations",
-    "specialized_conversations": "Consider Development Maintenance conversation for token-efficient command execution"
+    "specialized_conversations": "Use Dev Commands v1 conversation for token-efficient command execution",
+    "command_discoverability": "Always mention LIST command for new conversations to discover available commands"
   },
   "critical_priorities": {
     "issue_5": "✅ COMPLETE - Full conversation transcript mirroring system operational",
     "issue_6": "✅ COMPLETE - Repository maintenance system operational",
     "repository_maintenance": "✅ COMPLETE - Systematic maintenance system operational",
     "command_system_enhancement": "✅ COMPLETE - READ command and STATUS guidance implemented",
+    "command_discoverability": "✅ COMPLETE - LIST and HELP commands operational",
+    "specialized_conversation_setup": "✅ COMPLETE - Dev Commands v1 setup with starter text",
     "human_ideas_system": "✅ COMPLETE - HUMAN-IDEAS-BACKLOG.md created for post-conversation insights",
-    "handoff_validation": "HIGH - Test transcript access by new conversations",
+    "complete_command_system": "✅ COMPLETE - All essential commands operational with full workflow integration",
+    "handoff_validation": "HIGH - Test transcript access and command system by new conversations",
+    "dev_commands_testing": "HIGH - Test Dev Commands v1 specialized conversation pattern",
     "issue_4": "HIGH - Human-friendly conversation management implementation",
     "issue_3": "HIGH - Cross-referencing system refinement", 
     "issue_2": "MEDIUM - Universal project template system",
-    "llm_drift_management": "DOCUMENTED - Future implementation priority",
-    "specialized_conversations": "READY FOR TESTING - Development Maintenance conversation pattern"
+    "llm_drift_management": "DOCUMENTED - Future implementation priority"
   },
   "system_status": {
     "foundation": "COMPLETE",
     "transcript_mirroring": "OPERATIONAL",
-    "command_system": "ENHANCED_WITH_READ_AND_GUIDANCE", 
+    "command_system": "COMPLETE_WITH_DISCOVERABILITY_AND_SPECIALIZATION", 
     "repository_maintenance": "SYSTEMATIC_AND_AUTOMATED",
     "handoff_system": "READY_FOR_VALIDATION",
-    "human_usability": "ENHANCED_WITH_SPECIALIZED_OPTIONS",
-    "project_description_sync": "IMPLEMENTED",
+    "human_usability": "COMPLETE_WITH_LIST_HELP_AND_SPECIALIZED_CONVERSATIONS",
+    "project_description_sync": "NEEDS_UPDATE_WITH_COMMAND_SYSTEM",
     "conversation_naming_sync": "IMPLEMENTED",
     "github_integration": "FULLY_FUNCTIONAL",
     "ideas_capture_system": "OPERATIONAL"
   },
   "command_system_reference": {
-    "primary_commands": ["STATUS (enhanced with guidance)", "MILESTONE", "SAVE"],
+    "essential_commands": ["LIST (command discovery)", "HELP [command] (detailed guidance)", "STATUS (enhanced with all guidance)"],
+    "primary_commands": ["MILESTONE", "SAVE"],
     "development_commands": ["UPDATE-INDEX", "HANDOFF-PREP", "ARTIFACT-REPO", "ISSUE-UPDATE", "PROJECT-STATE"],
     "maintenance_commands": ["REPO-CHECK"],
-    "context_commands": ["READ (new - access transcripts and files)"],
-    "integration": "MILESTONE and SAVE auto-trigger repository maintenance, STATUS provides development command guidance",
-    "documentation": "Complete reference in HUMAN-INSTRUCTIONS.md with enhanced guidance",
-    "usage": "Commands available immediately in any conversation - see HUMAN-INSTRUCTIONS.md for detailed guidance",
-    "specialized_execution": "Development commands can be executed in specialized Development Maintenance conversations for token efficiency"
+    "context_commands": ["READ (access transcripts and files)"],
+    "integration": "MILESTONE and SAVE auto-trigger repository maintenance, STATUS provides development command guidance and specialized conversation recommendations",
+    "documentation": "Complete reference in HUMAN-INSTRUCTIONS.md with LIST/HELP integration",
+    "usage": "Start with LIST command to discover all available commands",
+    "specialized_execution": "Dev Commands v1 conversation ready for token-efficient development command execution"
   },
   "specialized_conversation_types": {
-    "development_maintenance": {
-      "purpose": "Execute development commands (UPDATE-INDEX, PROJECT-STATE, ISSUE-UPDATE) separately from main work",
+    "dev_commands_v1": {
+      "purpose": "Execute development commands (UPDATE-INDEX, PROJECT-STATE, ISSUE-UPDATE, REPO-CHECK, HANDOFF-PREP) separately from main work",
       "benefits": "Token efficiency, specialized context, separation of concerns",
-      "usage_pattern": "Main conversation recommends via STATUS → Create Development Maintenance conversation → Execute commands → Return to main work",
+      "usage_pattern": "Main conversation recommends via STATUS → Create Dev Commands v1 conversation → Use starter text → Execute commands → Return to main work",
       "status": "Ready for testing",
-      "naming_convention": "Development Maintenance v1, v2, etc."
+      "naming_convention": "Dev Commands v1, v2, etc.",
+      "starter_text_provided": "Complete role definition and setup instructions implemented",
+      "workflow_integration": "MILESTONE and STATUS commands recommend when appropriate"
     }
   },
   "conversation_protocols": {
@@ -153,15 +165,16 @@
       "handoff_validation": "Before ending, confirm human understands next conversation expectations",
       "critical_priority_alerts": "Always highlight urgent tasks that need immediate attention",
       "dual_prompt_required": "ALWAYS prompt for both Project Description update AND conversation rename",
-      "command_system_introduction": "Always inform new conversations about available enhanced command system in HUMAN-INSTRUCTIONS.md",
-      "ideas_backlog_reference": "Mention HUMAN-IDEAS-BACKLOG.md for capturing post-conversation insights"
+      "command_system_introduction": "Always inform new conversations about LIST command for immediate command discovery",
+      "ideas_backlog_reference": "Mention HUMAN-IDEAS-BACKLOG.md for capturing post-conversation insights",
+      "list_command_emphasis": "Always mention LIST command as first step for new conversations"
     }
   },
   "meta": {
-    "last_updated": "2025-08-28T08:59:00Z",
+    "last_updated": "2025-08-28T09:20:00Z",
     "updated_by": "Setup Core v2",
-    "next_update_by": "Cross-conversation validation test or Development Core v1 or Development Maintenance v1",
-    "index_version": "1.5",
-    "major_milestone": "Infrastructure phase complete with enhanced command system and specialized conversation options"
+    "next_update_by": "Cross-conversation validation test or Development Core v1 or Dev Commands v1",
+    "index_version": "1.6",
+    "major_milestone": "Complete command system with LIST/HELP discoverability and Dev Commands v1 specialized conversation setup"
   }
 }
