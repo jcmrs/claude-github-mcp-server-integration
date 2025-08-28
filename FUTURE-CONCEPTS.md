@@ -34,6 +34,54 @@ This drift pattern undermines technical credibility and project effectiveness. F
 
 ---
 
+## Large File Update Management - WORKFLOW OPTIMIZATION (Added 2025-08-28)
+
+### Problem Identified (Setup Core v2)
+**Issue:** Large file updates can trigger Claude response length limits during GitHub API operations
+
+**Specific Instance:**
+- README.md comprehensive update (~6,000+ characters)
+- Response truncated during `github:create_or_update_file` operation
+- Required "Continue" button to complete operation
+- File completed successfully but workflow interrupted
+
+### Root Causes
+1. **Large content blocks** in single API operations
+2. **Response length limits** during file update execution
+3. **Workflow interruption** requiring human intervention
+4. **Lack of preemptive size checking** before large operations
+
+### Proposed Solutions
+1. **File Size Checking Protocol**
+   - Check content length before large file operations
+   - Warn when approaching response limits
+   - Suggest breaking large updates into sections
+
+2. **Incremental Update Strategy**  
+   - Break large documentation updates into multiple smaller operations
+   - Update sections sequentially rather than entire files
+   - Use multiple commits for large documentation changes
+
+3. **REPO-CHECK Integration**
+   - Add file size monitoring to repository maintenance checklist
+   - Identify files approaching unwieldy size
+   - Suggest optimization or restructuring before problems occur
+
+### Implementation Recommendations
+- **Immediate:** Add file size awareness to REPO-CHECK command
+- **Short-term:** Develop incremental update protocols for large files
+- **Long-term:** Automated file size monitoring and optimization suggestions
+
+### Technical Specifications
+- **Size threshold warning:** Files approaching 5,000+ characters
+- **Critical threshold:** Files approaching 8,000+ characters (near response limits)
+- **Optimization triggers:** Suggest file restructuring or breaking into multiple files
+
+### Integration with Repository Maintenance
+This demonstrates the value of systematic maintenance - proactive identification of potential workflow issues before they interrupt operations.
+
+---
+
 ## Core Concept: Universal Project Template System
 
 ### The Vision
@@ -150,10 +198,10 @@ Claude: "Setting up research project coordination framework."
 
 ## Implementation Priority Framework
 
-### Phase 1: Drift Management (CRITICAL)
-- Implement LLM drift checking mechanisms
-- Reality validation protocols
-- Engineering language enforcement
+### Phase 1: Critical Issues (IMMEDIATE)
+- LLM drift management implementation
+- Large file update workflow optimization
+- Response limit handling protocols
 
 ### Phase 2: Template System (High Priority)
 - Universal project templates
@@ -179,6 +227,12 @@ Claude: "Setting up research project coordination framework."
 - Honest limitation assessment as default
 - Reality-checking before status claims
 
+### Workflow Resilience (Added 2025-08-28)
+- Proactive identification of potential workflow interruptions
+- Size and complexity monitoring before operations
+- Fallback strategies for large operations
+- Human intervention minimization
+
 ### Simplicity First
 - Templates should be human-readable and editable
 - Setup process should require minimal technical knowledge
@@ -201,6 +255,11 @@ Claude: "Setting up research project coordination framework."
 - What validation mechanisms work within conversation constraints?
 - How to maintain technical accuracy under user satisfaction pressure?
 
+### Workflow Optimization (Added 2025-08-28)
+- What file size thresholds reliably trigger response limits?
+- How to predict and prevent workflow interruptions?
+- What incremental update strategies work best for large documentation?
+
 ### Technical Feasibility
 - Can Claude automatically detect optimal project structures?
 - How complex can template customization become before it breaks simplicity?
@@ -218,4 +277,4 @@ Claude: "Setting up research project coordination framework."
 
 ---
 
-**Meta Note:** This document tracks concepts and problems identified during development for future implementation. LLM drift management now marked as critical priority for technical project success.
+**Meta Note:** This document tracks concepts and problems identified during development for future implementation. LLM drift management and large file update optimization now marked as critical priorities for technical project success.
