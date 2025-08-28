@@ -17,8 +17,9 @@
   },
   "human_action_required": {
     "update_project_description": "This project establishes Claude.AI + GitHub coordination. FOR NEW CONVERSATIONS: Go to GitHub repository jcmrs/claude-github-mcp-server-integration and read CONVERSATION-INDEX.json to understand current work. Current phase: Setup Core v2 - implement conversation transcript mirroring system.",
-    "reason": "New conversations need this in Claude Project Description to know where to start",
-    "when_to_update": "Immediately, and whenever current phase changes",
+    "rename_conversation": "Setup Core v2",
+    "reason": "Human needs to update Claude Project Description and rename conversation for tracking consistency",
+    "when_to_update": "Immediately when starting new conversation, and whenever current phase changes",
     "template": "FOR NEW CONVERSATIONS: Go to GitHub repository jcmrs/claude-github-mcp-server-integration and read CONVERSATION-INDEX.json. Current phase: [PHASE] - [DESCRIPTION]."
   },
   "conversation_chains": {
@@ -56,13 +57,14 @@
     "step_3": "Read the files listed in start_by_reading",
     "step_4": "Begin work on the immediate_task specified",
     "step_5": "Update this index when work is complete or when handing off",
-    "step_6": "ALWAYS prompt human to update Claude Project Description when phase changes"
+    "step_6": "ALWAYS prompt human to update Claude Project Description when phase changes",
+    "step_7": "ALWAYS prompt human to rename conversation with exact name from human_action_required"
   },
   "conversation_update_rules": {
     "when_starting_work": "Update current_active_work with your conversation details",
     "when_completing_work": "Move completed tasks to appropriate conversation chain", 
     "when_handing_off": "Set next pickup_point and immediate_task for next conversation",
-    "when_phase_changes": "Update human_action_required with new Project Description text",
+    "when_phase_changes": "Update human_action_required with new Project Description text AND new conversation name",
     "always": "Keep this index as the single source of truth for conversation coordination"
   },
   "critical_priorities": {
@@ -76,19 +78,22 @@
     "transcript_mirroring": "CRITICAL_MISSING",
     "handoff_system": "READY_FOR_TEST",
     "human_usability": "DESIGNED_NOT_IMPLEMENTED",
-    "project_description_sync": "IMPLEMENTED"
+    "project_description_sync": "IMPLEMENTED",
+    "conversation_naming_sync": "IMPLEMENTED"
   },
   "conversation_protocols": {
     "mandatory_human_prompts": {
-      "project_description_update": "When completing major phases, always tell human: 'Please update your Claude Project Description to: [exact text from human_action_required]'",
+      "project_description_update": "When starting or completing major phases, always tell human: 'Please update your Claude Project Description to: [exact text from human_action_required.update_project_description]'",
+      "conversation_rename": "Always tell human: 'Please rename this conversation to: [exact text from human_action_required.rename_conversation]'",
       "handoff_validation": "Before ending, confirm human understands next conversation expectations",
-      "critical_priority_alerts": "Always highlight urgent tasks that need immediate attention"
+      "critical_priority_alerts": "Always highlight urgent tasks that need immediate attention",
+      "dual_prompt_required": "ALWAYS prompt for both Project Description update AND conversation rename"
     }
   },
   "meta": {
-    "last_updated": "2025-08-28T01:47:00Z",
+    "last_updated": "2025-08-28T01:50:00Z",
     "updated_by": "Setup Core v1",
     "next_update_by": "Setup Core v2",
-    "index_version": "1.1"
+    "index_version": "1.2"
   }
 }
